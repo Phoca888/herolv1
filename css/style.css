@@ -79,7 +79,8 @@ a{
 /* Layout 版型設定 */
 .container{
   max-width: 1920px;
-  margin: 60px auto;
+  margin: 0 auto;
+  padding: 0 12px;
 }
 
 
