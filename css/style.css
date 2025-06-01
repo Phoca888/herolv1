@@ -92,7 +92,7 @@ p, h1, h2, h3{
   max-width: 100%;
   width: 100%;  
   margin: 0 auto;
-  
+  padding: 0 12px;
 }
 
 
@@ -243,10 +243,10 @@ p.no-gap {
 
 .body-card {
   font-weight: bold;
-    
+    max-width: 634px;
     width: 100%;
     box-sizing: border-box; /* 確保 padding 不會讓整體超寬 */
-    
+    padding: 0 10px;  
     min-width: 0; 
 }
 
@@ -254,7 +254,7 @@ p.no-gap {
 
 
 /* 滿寬膠囊版，放在 .body-card 裡用 */
-.body-card .capsule-full {
+ .capsule-full {
   margin-top: 1em;
     display: block;              /* 讓膠囊變成塊級元素，可以佔滿寬度 */
     width: 100%;                 /* 撐滿父容器 .body-card 的寬度 */
@@ -438,7 +438,7 @@ color: #0027D5;
     padding: 0 10px;         /* 縮小內距 */
     flex-direction: column;   /* 垂直排列 */
     gap: 10px;
-    justify-content: center;
+     justify-content: center;
     flex-direction: column;
   }
   .capsule-full {
