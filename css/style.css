@@ -68,6 +68,7 @@ img{
   height: auto;
   vertical-align: middle;
   object-fit: cover;
+  box-sizing: border-box;
 }
 
 a{
@@ -77,11 +78,61 @@ a{
 }
 
 
+/* 針對大螢幕的響應式設計 */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;    /* 在大螢幕上限制最大寬度 */
+  }
+  
+  .header,
+  .body {
+    max-width: 1200px;    /* 同步限制 */
+  }
+}
+
+/* 針對更大螢幕的設計 */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;    /* 只在超大螢幕才使用原本的寬度 */
+  }
+  
+  .header,
+  .body {
+    max-width: 1920px;
+  }
+}
+
+@media (max-width: 768px) {
+  .body-card {
+    max-width: 100%;      /* 小螢幕上完全撐滿 */
+    padding: 0 15px;      /* 加大內距避免貼邊 */
+  }
+}
+
+/* 小螢幕響應式調整 */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px auto;    /* 減少上下邊距 */
+    padding: 0 15px;      /* 調整左右內距 */
+  }
+  
+  .header-word {
+    padding-left: 15px;   /* 調整內距 */
+  }
+  
+  .meau {
+    flex-direction: column; /* 小螢幕時垂直排列選單 */
+    gap: 10px;
+  }
+}
 
 /* Layout 版型設定 */
 .container{
-  max-width: 1920px;
+  max-width: 100%;        /* 改為 100% 而不是固定的 1920px */
+  width: 100%;            /* 確保不超出視窗寬度 */
   margin: 60px auto;
+  padding: 0 20px;        /* 加入左右內距，避免內容貼邊 */
+  box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
 }
 
 
@@ -107,12 +158,12 @@ a{
 .header{
   display: flex;
   width: 100%;           /* 確保 .header 佔滿其父容器的寬度 */
-  max-width: 1920px;     /* 如果 .header 也有最大寬度限制，通常會與 .container 相同 */
+  max-width: 100%x;     /* 如果 .header 也有最大寬度限制，通常會與 .container 相同 */
   margin: 0 auto;        /* 讓 .header 本身水平居中於其父容器 */
   align-items: center;
   border-top: 1px solid #000;    /* 上方黑色線 */
     border-bottom: 1px solid #000; /* 下方黑色線 */
-   
+   box-sizing: border-box;
 }
 
 .header-tag a{
@@ -178,10 +229,11 @@ a{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 1920px;
+    max-width: 100%;
     gap: 20px;
     padding: 40px 0;
     border-bottom: 1px solid #000;
+    box-sizing: border-box;
 }
 
 
@@ -228,6 +280,7 @@ p.no-gap {
     max-width: 634px;
     width: 100%;
     box-sizing: border-box; /* 確保 padding 不會讓整體超寬 */
+    padding: 0 10px; 
 }
 
 
@@ -290,6 +343,7 @@ color: #0027D5;
   flex-wrap: wrap;   
   max-width: 100%;               /* 撐滿父容器 */
     box-sizing: border-box; 
+    padding: 0 20px;  
 }
 
 .connect p {
