@@ -243,10 +243,10 @@ p.no-gap {
 
 .body-card {
   font-weight: bold;
-    max-width: 634px;
+    
     width: 100%;
     box-sizing: border-box; /* 確保 padding 不會讓整體超寬 */
-    padding: 0 10px;  
+    
     min-width: 0; 
 }
 
