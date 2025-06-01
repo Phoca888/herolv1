@@ -311,3 +311,46 @@ color: #0027D5;
 .footer{
   text-align: center;
 }
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+  
+  .header,
+  .body {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+  }
+  
+  .header,
+  .body {
+    max-width: 1920px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+  
+  .header-word {
+    padding-left: 15px;
+  }
+  
+  .meau {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .body-card {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
