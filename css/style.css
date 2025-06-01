@@ -1,0 +1,314 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Base Styles 基礎設定 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  max-width: 100%;
+  line-height: 1.5;
+  font-weight: 500;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+a{
+  text-decoration: none;
+  
+  
+}
+
+
+
+/* Layout 版型設定 */
+.container{
+  max-width: 1920px;
+  margin: 60px auto;
+}
+
+
+.meau{
+   display: flex; /* 將容器設定為 Flex 容器 */
+  justify-content: center; /* 在主軸（水平方向）上將內容居中 */
+  align-items: center;   /* 在交叉軸（垂直方向）上將內容居中，確保垂直置中，如果子元素高度不同會有用 */
+  gap: 20px;             /* 設定 Flex 項目之間的間隔為 20px */
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+
+}
+
+
+
+.meau-item{
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: 700px;
+}
+
+.header{
+  display: flex;
+  width: 100%;           /* 確保 .header 佔滿其父容器的寬度 */
+  max-width: 1920px;     /* 如果 .header 也有最大寬度限制，通常會與 .container 相同 */
+  margin: 0 auto;        /* 讓 .header 本身水平居中於其父容器 */
+  align-items: center;
+  border-top: 1px solid #000;    /* 上方黑色線 */
+    border-bottom: 1px solid #000; /* 下方黑色線 */
+   
+}
+
+.header-tag a{
+  font-size: 24px;
+}
+
+.header>div{
+  flex-basis: 50%;
+  min-width: 0;
+}
+
+.header-word {
+  
+  display:flex;
+  flex-direction: column;
+  justify-content: center;    /* 垂直居中對齊 */
+
+  /* 增加一些上下間距，讓它在網頁中有點空間 */
+  padding-top: 50px; /* 根據需要調整 */
+  padding-bottom: 50px; /* 根據需要調整 */
+  padding-left: 10px;
+
+ 
+}
+
+/* header-tag 內部元素的 Flexbox 置中及間距 */
+.header-tag {
+  display: flex;
+  align-items: center;     /* 垂直居中對齊 */
+  gap: 10px;               /* 元素之間的間距 */
+  margin-top: 8px;         /* 與上面的 time 元素間隔 */
+  margin-bottom: 8px;      /* 與下面的 h3 元素間隔 */
+  color: #0027D5;
+  flex-wrap: wrap;
+}
+
+/* 最新文章徽章的樣式 (根據圖片樣式補充) */
+.new {
+  background-color: #0027D5; /* 圖片中看到的藍色 */
+  color: #FFFFFF; /* 白色文字 */
+  padding: 4px 8px; /* 上下左右內邊距 */
+  border-radius: 40px; /* 圓角形成膠囊狀 */
+  font-size: 0.8em; /* 稍微小一點的字體 */
+  flex-wrap: wrap;
+}
+
+/* 日期 (time) 的樣式 */
+.header-word time {
+  color: #4B4B4B; /* 與卡片日期顏色一致 */
+  font-size: 16px; /* 根據圖片判斷，可以調整 */
+}
+
+/* 標題 (h3) 的樣式 */
+.header-word h3 {
+  font-size: 24px; /* 根據圖片判斷，標題較大 */
+  font-weight: 700; /* 粗體 */
+  color: #333; /* 標題顏色，可以設定更深 */
+  line-height: 1.3; /* 行高，讓文字不擠壓 */
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
+    gap: 20px;
+    padding: 40px 0;
+    border-bottom: 1px solid #000;
+}
+
+
+
+.body-card ol {
+    list-style: decimal inside;  /* 數字放內容區裡 */
+    
+}
+
+.body-card ul{
+    list-style: disc inside;  /* 數字放內容區裡 */
+   
+}
+
+
+ /* 確保內文間距 */
+ h2 {
+  margin-top: 0.5em;
+    margin-bottom: 1em;
+    color: blue;
+    font-size: 34px;
+}
+
+h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-size: 24px;
+}
+
+p {
+    margin-top: 1em;
+    
+}
+
+
+p.no-gap {
+    margin-bottom: 0;
+}
+
+
+
+.body-card {
+  font-weight: bold;
+    max-width: 634px;
+    width: 100%;
+    box-sizing: border-box; /* 確保 padding 不會讓整體超寬 */
+}
+
+
+.highlight{
+  color: #0027D5;
+}
+
+/* 滿寬膠囊版，放在 .body-card 裡用 */
+.body-card .capsule-full {
+  margin-top: 1em;
+    display: block;              /* 讓膠囊變成塊級元素，可以佔滿寬度 */
+    width: 100%;                 /* 撐滿父容器 .body-card 的寬度 */
+    padding: 20px 20px;              /* 上下內距，左右靠寬度撐，不需要額外 padding */
+    background-color: #ededed;   /* 膠囊底色，可換成你喜歡的色 */
+    color: black;                 /* 膠囊文字顏色 */
+    border-radius: 20px;         /* 圓角，數字大一點看起來像膠囊 */
+    font-size: 16px;             /* 字體大小 */
+    font-weight: 500;            /* 字體粗細 */
+   box-sizing: border-box;      /* 確保 padding 不會讓寬度超出父容器 */
+}
+
+.btn {
+    display: flex;                /* 用 flex 排列 */
+    justify-content: space-between; /* 左右兩端對齊 */
+    align-items: center;          /* 垂直置中 */
+    margin-top: 1em;              /* 與上方留一點空隙 */
+    flex-wrap: wrap; 
+}
+
+.btn a{
+  color: black;
+}
+
+.capsule {
+    display: inline-block;          /* 讓它隨內容寬度變化 */
+    padding: 4px 12px;             /* 上下 4px、左右 12px */
+    background-color: white     /* 背景色 */
+    color: #ededed;                   /* 文字顏色 */
+    border-radius: 999px;          /* 超大圓角，形成膠囊形狀 */
+    font-size: 14px;               /* 字體大小 */
+    font-weight: 500;              /* 字體粗細 */
+    border: 1px solid ;        /* 邊框，讓輪廓更清楚 */
+}
+
+.capsule a{
+  color:#ededed ;
+}
+
+.mail{
+  text-decoration: underline;
+color: #0027D5;
+
+}
+
+.connect{
+  display: flex;                /* 用 flex 排列 */
+    justify-content: space-evenly; /* 左右兩端對齊 */
+    align-items: center;          /* 垂直置中 */
+    margin-top: 1em;              /* 與上方留一點空隙 */
+  flex-wrap: wrap;   
+  max-width: 100%;               /* 撐滿父容器 */
+    box-sizing: border-box; 
+}
+
+.connect p {
+
+    word-break: break-word;    /* 長字串自動換行 */
+}
+
+.connect .icon {
+    display: flex;             /* icon 橫向排列 */
+    flex-wrap: wrap;           /* 小螢幕時自動換行 */
+    gap: 8px;                  /* icon 之間留間距 */
+}
+
+.connect .icon img {
+    max-width: 100%;           /* 確保圖片不爆框 */
+    height: auto;              /* 等比例縮放 */
+    width: 32px;               /* 小圖示固定寬度，根據需求調整 */
+}
+
+.footer{
+  text-align: center;
+}
