@@ -265,6 +265,8 @@ p.no-gap {
     font-size: 16px;             /* 字體大小 */
     font-weight: 500;            /* 字體粗細 */
    box-sizing: border-box;      /* 確保 padding 不會讓寬度超出父容器 */
+   word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .btn {
@@ -436,5 +438,10 @@ color: #0027D5;
     padding: 0 10px;         /* 縮小內距 */
     flex-direction: column;   /* 垂直排列 */
     gap: 10px;
+    justify-content: center;
+    flex-direction: column;
   }
+  .capsule-full {
+        padding: 10px;
+    }
 }
